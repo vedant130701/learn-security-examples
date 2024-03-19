@@ -18,3 +18,8 @@
   </script>
 </body>
 </html>
+
+<!-- Now once the admin clicks this link, unauthorized guy gains access to sensitive end point. Cross side forgery request -->
+<!-- Fix to this is secret is from a user arg when we start the server, HTTPOnly flag should be set true. Cookies then cannot be read programmatically -->
+<!-- sameSite - session id and cookie will only be sent if the client and server have same hostname. We set it true. Ensures token cannot be stolen
+programattically -->

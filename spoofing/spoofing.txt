@@ -1,1 +1,9 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+Ans - We were able to see the vulnerability of session hijacking and CSRF. The user session could be hijacked
+programmatically as httpOnly for cookie was set to False. CSRF could have occurred due to sameSite being False
+due to which a malicious agent can get access to a sensitive end point by injecting a malicious script.
+
+Which CIA properties do you think Spoofing violates?
+
+Ans - Spoofing violates confidentiality in the CIA as hijackers get access and authorization to data not meant for them

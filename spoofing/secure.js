@@ -59,3 +59,6 @@ app.post("/forget", (req, res) => {
 })
 
 app.listen(8000)
+
+// Another issue is that session does not timeout here. So we should have a timeout for the cookie
+// Also need to set it secure using https

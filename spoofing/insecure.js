@@ -12,6 +12,8 @@ app.use(
     saveUninitialized: false
   })
 )
+// generated and stored in server memory
+// sent as a cookie to client
 
 app.post("/sensitive", (req, res) => {
   if (req.session.user === 'Admin') {
@@ -54,3 +56,10 @@ app.post("/forget", (req, res) => {
 })
 
 app.listen(8000)
+
+
+// weakness - if someone copies the cookie (session id) they can just become an authorized user
+// clicking on malicious link, they can get access to session ids
+
+// /sensitive - If there is a script between Admin and the server, then malicious user can gain access to it as they might have
+// access to session. mal-csrf html can directly get access. See that code for more info.
