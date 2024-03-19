@@ -59,3 +59,8 @@ app.post("/forget", (req, res) => {
 })
 
 app.listen(8000)
+
+// an issue with this is that we accept "name" as is and use ${name} which can also execute a javascript snippet.
+// So a hijacker an inject it with a script and gain information
+// So we need to sanitize the information we get. In secure.js we see that the given information is first cleaned before being used
+// We can use an express library for escapeHTML to sanitize the input

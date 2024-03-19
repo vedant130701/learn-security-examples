@@ -1,0 +1,9 @@
+Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+Ans - The vulnerability here is that a malicious agent can input a js snippet and it would
+be executed as a script in the program at ${name}. The secure version prevents it by 
+data cleaning, it sanitizes the input to be only a string and not a script.
+
+Which CIA property does tampering violate?
+
+Ans - It violates integrity in the CIA. As the site and information on it is tampered with.
