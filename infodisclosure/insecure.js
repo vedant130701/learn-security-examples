@@ -36,3 +36,7 @@ app.get('/userinfo', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
+// here we can embed mongoose query in the req side. So it could be some mongodb condition or anything on those lines
+// again sanitize input to avoid Cross side scripting attack. Both tampering and info disclosure happening here.
