@@ -1,0 +1,13 @@
+Q Briefly explain the vulnerability and why the secure version prevents the
+vulnerability.
+
+A The vulnerability in this case was that there was no authentication in this at all. 
+So we need an authentication mechanism to decide if the endpoint needs to be allowed 
+to an user. In the secure version, we are checking the sessionID to find if the person
+is logged in and also part of the database. This is a form of authentication to decide 
+which person has access.
+
+Q What additional security mechanisms can you incorporate to prevent such
+attacks?
+
+A Additionally we can add 2FA to authenticate. 
