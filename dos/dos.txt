@@ -1,2 +1,12 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+We are directly using findOne on id which comes from any user or malicious agent. If an unexpected
+id comes, there is an error due to which mongodb does not return anything crashing the server.
+The secure version prevents it as we have a try-catch block for error handling so that if an 
+unexpected event occurs, it still returns information to the user and not crashing the server.
+
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+Additionally we can add data sanitization for the input as right now id is directly sent to 
+mongodb. To prevent ddos, we can add rate limiting on the middleware.
