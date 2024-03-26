@@ -1,2 +1,11 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+
+The vulnerability here is that there is no tracking of where the request comes from. So there is no proof against anyone in any case.
+In the secure version, we track the time and ip address by logging it.
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+Also instead of storing logs on file system, we can save it on a distributed database to prevent data loss.
+We should sanitize inputs so that any script does not destroy the log.
+We have no audit policies. We can run a script at intervals which scans through the logs to flag malicious requests.
+Additionally we can add an authentication to send message and we can log the actual user responsible for sending the message.
