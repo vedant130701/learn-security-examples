@@ -1,3 +1,16 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
-Which CIA property does tampering violate?
+
+Ans - Here a malicious agent can inject mongodb queries or conditions which can return back 
+unnecessary information. Secure version prevents it by sanitizing the input so that no one can inject
+any conditions.
+
+
+Which CIA property does information disclosure violate?
+
+Ans - It violates confidentiality as malicious agents can get access to unauthorized information.
+
 What additional security mechanisms can you incorporate?
+
+In this scenario a user information can be leaked by trial and error by putting username. So we can create 
+a more secure authentication. Also console.log should be removed. When you send back sensitive objects, 
+encrypt and send it.
